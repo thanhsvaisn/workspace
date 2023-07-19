@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script src="https://kit.fontawesome.com/3ebc92194d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="D:\workpace\bootstrap-5.0.2-dist\css\bootstrap.css" class="">
+    <link rel="stylesheet" href="D:\workpace\doCV\css\style-home.css" class="">
+    <link rel="stylesheet" href="D:\workpace\doCV\css\style-address.css" class="">
+</head>
+<body>
+    <div id="container-all">
+    <!--begin header-->
+    
+    <header>
+        <div class="container-header">
+        <nav>     
+            <ul class="header-nav-bar">
+                <li><a href="D:\workpace\doCV\js\CVhome.html">Home</a></li>
+                <li><a href="D:\workpace\doCV\js\skill.html">Skills</a></li>
+                <li><a href="D:\workpace\doCV\js\project.html">Project</a></li>
+                <li><a href="D:\workpace\doCV\js\contact.html">Contact</a></li>
+            </ul>
+        
+        </nav>
+        <div class="your-information">
+            <form action="doCV/addressCV.html" method="get" id="button">
+                <button class="btn btn-primary" type="button">Your information</button>
+            </form>
+            
+        </div>
+    </div>
+    <form action="" id="input">
+            <button id="icons"><i class="fa-solid fa-xmark"></i></button>
+        <div class="form__container-1">
+        <div class="form-email div-label">
+            <label for="email" class="text">Email:</label>
+            <input type="email" id="email" placeholder="Enter your email here" class="email form-input">
+          
+        </div>
+            <div class="emailerror text"></div>
+        <div class="form-tel div-label">
+            <label for="tel" class="text">Number Phone:</label>
+            <input type="tel" id="tel" class="tel form-input" maxlength="10">
+            
+        </div>
+            <div class="telerror text"></div>
+        <div class="div-label" id="content-a">
+            <label for="centent-your" class="text">Employer's opinion:</label>
+            <input type="text" class="form-input" id="centent-your" placeholder="Nội dung">
+            
+        </div>
+        <div class="content text "></div>
+        <div class="div-label">
+            <button type="button" id="submit" class="btn-primary btn">Submit</button>        
+        </div>
+        <div class="error text"></div>
+    </div>
+      </form>
+      
+    </header>
+    <!--end header-->
+
+    <!--begin content-->
+    <main>
+      <div class="contact-section">
+        <h2>Thông tin liên lạc</h2>
+        <p>Liên hệ với chúng tôi để biết thêm thông tin:</p>
+        <ul>
+          <li class="font-icons"><i class="fas fa-map-marker-alt"></i> Địa chỉ: 123 Đường ABC, Thành phố XYZ</li>
+          <li class="font-icons"><i class="fas fa-phone"></i> Số điện thoại: 0123456789</li>
+          <li class="font-icons"><i class="fas fa-envelope"></i> Email: example@example.com</li>
+        </ul>
+      </div>
+    </main>
+    <!--end content-->
+    
+    <!-- begin footer -->
+    <footer>
+        <h4 class="footer-h4">Thông tin liên hệ</h4>
+        <a href="https://www.facebook.com/thanhluuquang2006/" class="icons" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.instagram.com/luuquanhthanh/" class="icons" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <p class="license">&copy; 2023 Investment Portfolio. All rights reserved.</p>
+    </footer>
+    <!--end footer-->
+</div>
+    </body>
+    <script>
+         var display = document.getElementById('button');
+var showform = document.getElementById('input');
+var idApp = document.getElementById('container-all');
+var tagBody = document.getElementsByTagName('body')[0];
+
+display.addEventListener('click', function () {
+  showform.style.display = 'block';
+  idApp.style.background = 'rgba(168,168,168,0.4)';
+});
+
+var formbase = document.getElementById("submit");
+formbase.addEventListener('click', function () {
+  var getemail = document.getElementsByClassName('email')[0];
+  var gettel = document.getElementsByClassName('tel')[0];
+  var text = document.getElementById('centent-your');
+  var content = text.value;
+  var erroremail = getemail.value;
+  var errortel = gettel.value;
+  var telRegex = /^034+\d{7,10}$/;
+  var checkemail = /^\w+@gmail.com$/;
+  var count = 0;
+  var length = 1;
+
+  if (content.length <= length) {
+    document.getElementsByClassName('content')[0].textContent = 'Nhập ý kiến';
+    document.getElementsByClassName('content')[0].style.color = 'red';
+  } else {
+    document.getElementsByClassName('content')[0].textContent = 'Tôi sẽ cố gắng';
+    document.getElementsByClassName('content')[0].style.color = 'green';
+  }
+  if (!telRegex.test(errortel)) {
+    document.getElementsByClassName('telerror')[0].textContent = 'Số điện thoại chưa đúng';
+    document.getElementsByClassName('telerror')[0].style.color = 'red';
+
+    count++;
+  } else {
+    document.getElementsByClassName('telerror')[0].textContent = 'Hợp lệ';
+    document.getElementsByClassName('telerror')[0].style.color = 'green';
+  }
+
+  if (!checkemail.test(erroremail)) {
+    document.getElementsByClassName('emailerror')[0].textContent = 'Email chưa đúng';
+    document.getElementsByClassName('emailerror')[0].style.color = 'red';
+
+    count++;
+  } else {
+    document.getElementsByClassName('emailerror')[0].textContent = 'Hợp lệ';
+    document.getElementsByClassName('emailerror')[0].style.color = 'green';
+  }
+
+  if (count === 0) {
+    document.getElementsByClassName('error')[0].textContent = 'Đang xử lý...';
+    document.getElementById('submit').style.background = 'green';
+    document.getElementsByClassName('error')[0].style.color = 'darkgray';
+    setTimeout(function () {
+      document.getElementsByClassName('error')[0].textContent = 'Thành công';
+      document.getElementsByClassName('error')[0].style.color = 'green';
+    }, 4000);
+    setTimeout(function () {
+      showform.style.display = 'none';
+      idApp.style.background = 'white';
+      
+    }, 5000);
+  } else {
+    document.getElementsByClassName('error')[0].textContent = 'Gửi thất bại';
+    document.getElementsByClassName('error')[0].style.color = 'red';
+    document.getElementById('submit').style.background = 'red';
+  }
+});
+
+  
+  </script>
+  </html>

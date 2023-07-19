@@ -1,0 +1,127 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
+body{
+    height:1000px;
+}
+header {
+    font-family:Arial, Helvetica, sans-serif;
+    height:60px;
+    background:black;
+    min-width:100%;
+    position:fixed;
+}
+
+
+.header-nav-bar li {
+    display:inline-block;
+}
+.header-nav-bar li a {
+    text-decoration: none;
+    text-transform: capitalize;
+    line-height: 60px;
+    color:white;
+    padding:0 25px !important;
+}
+.header-nav-bar li:hover a {
+    background:#ccc;
+    color:black;
+    display:block;
+}
+.container-header{
+    display:flex;
+    line-height: 60px;
+    justify-content: space-between;
+}
+.your-information{
+    margin-right:100px;
+}
+
+#input{
+    width:900px;
+    margin: 100px auto;
+    border:2px solid black;
+    border-radius: 10px;
+    display:none;
+    background:white;
+}
+
+#icons {
+  font-size: 20px;
+  font-weight: 300;
+  border: none;
+  float: right;
+  padding: 5px 8px;
+}
+
+.form__container-1 {
+  margin: 100px 20px 100px 50px;
+}
+
+.div-label {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content:flex-end;
+  
+}
+
+.form-input {
+   
+    padding-left: 5px;
+    height: 50px;
+    flex: 1 ;
+  }
+
+.text {
+  align-self: center;
+  margin-top: 10px;
+  min-width: 150px;
+  
+}
+
+#centent-your {
+  padding-top: 10px;
+  padding:10px 0 50px 10px;
+}
+
+
+.text{
+    display:flex;
+    justify-content:flex-end;
+    font-size: 18px;
+}
+#submit{
+    margin-top: 20px;
+   
+}
+#container-all{
+    height:100%;
+}
+main{
+    padding-top:80px
+}
+.icons{
+    font-size: 2rem;
+    margin:0 20px;
+}
+footer{
+    position: fixed;
+        bottom: 0;
+        background-color: #000;  
+        right:0;
+        left:0;
+}
+.license{
+    color:white;
+    text-align: center;
+}
+.main-content{
+    font-size: 1.5rem;
+}
+.footer-h4{
+    margin :10px 10px;
+    font-size: 1.7rem;
+    color:white;
+}

@@ -1,0 +1,36 @@
+:root{
+    --width:10%;
+}
+.skill-list-item{
+    font-size: 1.5rem;
+    
+    
+    
+}
+.skills-list{
+    border:2px solid black;
+    height:500px;
+    width:700px;
+    margin: 0 auto;
+
+}
+.item{
+  padding-left:10px;
+  height:20px;
+  line-height: 20px;
+    background:rgb(255, 165, 0);
+    width:var(--width);
+    border-radius: 5px;
+    animation: myAnimation 5s infinite;
+}
+@keyframes myAnimation {
+    0% {
+      opacity: 0.5;
+      width:0%;
+    }
+    100% {
+      opacity: 1;
+      width:var(--width);
+    }
+    
+  }

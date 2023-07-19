@@ -1,0 +1,12 @@
+.font-icons{
+    list-style-type: none;
+    font-size: 1.3rem;
+}
+
+.contact-section{ 
+    width:600px;
+    border:2px solid black;
+    padding:80px;
+    margin:0 auto;
+}
+
